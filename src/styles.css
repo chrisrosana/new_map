@@ -4,8 +4,9 @@ body {
 }
 
 main {
-    display: block;
+    /* Setting the position fixed to the window */
     position: fixed;
+    /* Stretching the elements, the map: entire space of the map */
     top: 0;
     right: 0;
     bottom: 0;
@@ -13,5 +14,6 @@ main {
 }
 
 #map {
+    /* Set it the height to make a big map then set auto for the width */
     height: 100%;
 }
