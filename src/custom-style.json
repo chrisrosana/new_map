@@ -1,4 +1,50 @@
 {
-    "sources": {},
-    "layers": []
+    "sources": {
+      "wildfire-points": {
+        "type": "geojson",
+        "data": {
+          "type":"FeatureCollection",
+          "features": []
+        }
+      },
+      "us-states": {
+        "type": "geojson",
+        "data": {
+          "type":"FeatureCollection",
+          "features": []
+        }
+      }
+    },
+    "layers": [
+      {
+        "id": "wildfire-points",
+        "type": "circle",
+        "source": "wildfire-points",
+        "paint": {
+          "circle-radius": [
+            "/",
+            ["get", "acres"],
+            10000
+          ],
+          "circle-color": "#f43f3f"
+        }
+      }, {
+        "id": "us-states",
+        "type": "line",
+        "source": "us-states",
+        "paint": {
+          "line-color": "rgb(224,153,112)",
+          "line-width": 3
+        }
+      }, {
+        "id": "us-states-extrusion",
+        "type": "fill-extrusion",
+        "source": "us-states",
+        "paint": {
+          "fill-extrusion-color": "red",
+          "fill-extrusion-height": ["get", "acres"],
+          "fill-extrusion-opacity": 0.5
+        }
+      }
+    ]
 }
