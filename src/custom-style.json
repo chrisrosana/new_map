@@ -18,15 +18,14 @@
     "layers": [
       {
         "id": "wildfire-points",
-        "type": "circle",
+        "type": "heatmap",
         "source": "wildfire-points",
         "paint": {
-          "circle-radius": [
+          "heatmap-radius": [
             "/",
             ["get", "acres"],
-            10000
-          ],
-          "circle-color": "#f43f3f"
+            1000
+          ]
         }
       }, {
         "id": "us-states",
