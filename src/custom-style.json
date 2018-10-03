@@ -21,7 +21,7 @@
         "type": "circle",
         "source": "wildfire-points",
         "paint": {
-          "heatmap-radius": [
+          "circle-radius": [
             "/",
             ["get", "acres"],
             10000
