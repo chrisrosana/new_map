@@ -21,6 +21,7 @@
         "type": "circle",
         "source": "wildfire-points",
         "paint": {
+          "circle-color": "#ffffff",
           "circle-radius": [
             "/",
             ["get", "acres"],
