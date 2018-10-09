@@ -18,13 +18,13 @@
     "layers": [
       {
         "id": "wildfire-points",
-        "type": "heatmap",
+        "type": "circle",
         "source": "wildfire-points",
         "paint": {
-          "heatmap-radius": [
+          "circle-radius": [
             "/",
             ["get", "acres"],
-            1000
+            100000
           ]
         }
       }, {
@@ -42,7 +42,40 @@
         "paint": {
           "fill-extrusion-color": "red",
           "fill-extrusion-height": ["get", "acres"],
-          "fill-extrusion-opacity": 0.5
+          "fill-extrusion-opacity": 0.5,
+          "fill-extrusion-color": {
+            "property": "acres",
+            "stops": [
+              [
+                0,
+                "#ffffd4"
+              ],
+              [
+                10000,
+                "#fee391"
+              ],
+              [
+                20000,
+                "#fec44f"
+              ],
+              [
+                30000,
+                "#fe9929"
+              ],
+              [
+                40000,
+                "#ec7014"
+              ],
+              [
+                50000,
+                "#cc4c02"
+              ],
+              [
+                60000,
+                "#8c2d04"
+              ]
+            ]
+          }
         }
       }
     ]

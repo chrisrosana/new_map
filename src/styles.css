@@ -13,6 +13,28 @@ main {
     left: 0;
 }
 
+header {
+    top: 5px;
+    left: 5px;
+}
+
+header {
+    position: fixed;
+    background-color: #d2d2d2;
+    border: 1px solid black;
+    border-radius: 3px;
+    z-index: 100;
+    padding: 15px;
+}
+
+h3 {
+    margin: 0 0 5px;
+}
+
+a {
+  color: black;
+}
+
 #map {
     /* Set it the height to make a big map then set auto for the width */
     height: 100%;

@@ -30,5 +30,8 @@ async function init() {
 }
 
 mapboxgl.accessToken = settings.accessToken; // accessing the token to authenticate
+
+settings.customAttribution = document.querySelector('#attribution').innerHTML;
+
 map = new mapboxgl.Map(settings);  // instantiate
 map.on("load", init); // event handlers
