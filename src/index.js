@@ -27,6 +27,40 @@ async function init() {
 
     map.getSource("wildfire-points").setData(wildFire);
     map.getSource("us-states").setData(calCounties);
+
+    // initLegend();
+    initPopup();
+}
+
+let hovered;
+function initPopup() {
+  const nameSpan = document.querySelector('#name');
+  const countSpan = document.querySelector('#count');
+
+    map.on('mousemove', 'us-states-extrusion', function(e) {
+        clearHover();
+        if (e.features.length > 0) {
+            hovered = e.features[0];
+            map.setFeatureState(hovered, {
+                'hover': true
+            });
+            popup.style.display = 'block';
+
+            nameSpan.textContent = hovered.properties.name;
+            countSpan.textContent = hovered.properties.count;
+        }
+    });
+
+    map.on('mouseleave', 'us-states-extrusion', clearHover)
+}
+
+function clearHover() {
+    if (hovered) {
+        map.setFeatureState(hovered, {
+            'hover': false
+        });
+    }
+    hovered = null;
 }
 
 mapboxgl.accessToken = settings.accessToken; // accessing the token to authenticate

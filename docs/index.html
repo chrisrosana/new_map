@@ -6,8 +6,31 @@
     </head>
     <body>
         <main>
+          <header>
+            <h3>Wildfires in the United States as of 2018</h3>
+            <div>
+              By <a href="http://chrisrosana.me">Chris Rosana</a>
+            </div>
+          </header>
           <!-- Where we are rendering our map  -->
             <div id="map"></div>
+            <div id="popup">
+              <span id="name"></span>
+              <div>
+                <span id="count"></span>
+              </div>
+            </div>
         </main>
+
+        <template id="attribution">
+          <a href="https://www.nifc.gov/fireInfo/nfn.htm">© National Interagency Fire Center</a>
+          <a href="https://github.com/PublicaMundi/MappingAPI/blob/master/data/geojson/us-states.json">© PublicaMundi MappingAPI</a>
+        </template>
+
+        <template id = "legend-entry">
+          <div class = "entry">
+            <span class="color"></span>
+            <span class="value"></span>
+        </template>
     <script type="text/javascript" src="main.js"></script></body>
 </html>

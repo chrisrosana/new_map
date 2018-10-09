@@ -32,8 +32,20 @@
         "type": "line",
         "source": "us-states",
         "paint": {
-          "line-color": "rgb(224,153,112)",
-          "line-width": 3
+          "line-color": "#808080",
+          "line-width": [
+            "case",
+            [
+              "boolean",
+              [
+                "feature-state",
+                "hover"
+              ],
+              false
+            ],
+            4,
+            1
+          ]
         }
       }, {
         "id": "us-states-extrusion",
@@ -41,38 +53,63 @@
         "source": "us-states",
         "paint": {
           "fill-extrusion-color": "red",
-          "fill-extrusion-height": ["get", "acres"],
-          "fill-extrusion-opacity": 0.5,
+          "fill-extrusion-height": [
+            "+",
+            ["get", "acres"],
+            [
+              "case",
+              [
+                "boolean",
+                [
+                  "feature-state",
+                  "hover"
+                ],
+                false
+              ],
+              100000,
+              0
+            ]
+          ],
+          "fill-extrusion-base":[
+            "case",
+            [
+              "boolean",
+              [
+                "feature-state",
+                "hover"
+              ],
+              false
+            ],
+            100000,
+            0
+          ],
+          "fill-extrusion-opacity": 0.6,
           "fill-extrusion-color": {
             "property": "acres",
             "stops": [
               [
                 0,
-                "#ffffd4"
-              ],
-              [
-                10000,
-                "#fee391"
-              ],
-              [
-                20000,
-                "#fec44f"
-              ],
-              [
-                30000,
-                "#fe9929"
-              ],
-              [
-                40000,
-                "#ec7014"
+                "#fef0d9"
               ],
               [
                 50000,
-                "#cc4c02"
+                "#fdd49e"
               ],
               [
-                60000,
-                "#8c2d04"
+                80000,
+                "#fdbb84"
+              ],
+              [
+                100000,
+                "#fc8d59"
+              ],
+              [
+                150000,
+                "#e34a33"
+              ],
+              [
+                200000,
+                "#b30000"
               ]
             ]
           }
